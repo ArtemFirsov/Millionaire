@@ -13,6 +13,7 @@ class ResultsCaretaker {
     let decoder = JSONDecoder()
     
     private var resultsKey = "gameResults"
+    private var questionKey = "questionKey"
     
     func saveResults(game: [Games]) {
         do {
@@ -33,4 +34,23 @@ class ResultsCaretaker {
         }
     }
     
+    func saveQuestions(question: [Question]) {
+        do {
+            let data = try? self.encoder.encode(question)
+            UserDefaults.standard.setValue(data, forKey: questionKey)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func retrieveQuestions() -> [Question] {
+        guard let data = UserDefaults.standard.data(forKey: questionKey) else { return [] }
+        do {
+            return try self.decoder.decode([Question].self, from: data)
+        } catch {
+            print(error)
+            return []
+        }
+    }
 }
+

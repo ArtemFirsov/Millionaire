@@ -13,7 +13,6 @@
 		AB3472C127620DF7003F8525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3472BF27620DF7003F8525 /* Main.storyboard */; };
 		AB3472C327620DFD003F8525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3472C227620DFD003F8525 /* Assets.xcassets */; };
 		AB3472C627620DFD003F8525 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3472C427620DFD003F8525 /* LaunchScreen.storyboard */; };
-		AB93CEC6276C7E8B007C88C7 /* MillionaireModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB93CEC5276C7E8B007C88C7 /* MillionaireModel.swift */; };
 		AB93CECA276CAE44007C88C7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB93CEC9276CAE44007C88C7 /* Game.swift */; };
 		AB93CECC276CAFC6007C88C7 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB93CECB276CAFC6007C88C7 /* GameSession.swift */; };
 		ABA7C7D22771DFF70067103A /* ResultsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7C7D12771DFF70067103A /* ResultsCaretaker.swift */; };
@@ -32,7 +31,6 @@
 		AB3472C227620DFD003F8525 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB3472C527620DFD003F8525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB3472C727620DFD003F8525 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB93CEC5276C7E8B007C88C7 /* MillionaireModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MillionaireModel.swift; sourceTree = "<group>"; };
 		AB93CEC9276CAE44007C88C7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AB93CECB276CAFC6007C88C7 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		ABA7C7D12771DFF70067103A /* ResultsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCaretaker.swift; sourceTree = "<group>"; };
@@ -75,9 +73,8 @@
 				AB93CEC7276CADED007C88C7 /* App */,
 				AB93CEC8276CADFA007C88C7 /* VC's */,
 				AB3472BF27620DF7003F8525 /* Main.storyboard */,
-				AB93CEC5276C7E8B007C88C7 /* MillionaireModel.swift */,
 				ABA7C7D32771F3590067103A /* Session */,
-				ABA7C7D42771F3670067103A /* Services */,
+				ABA7C7D42771F3670067103A /* Patterns */,
 				AB3472C227620DFD003F8525 /* Assets.xcassets */,
 				AB3472C427620DFD003F8525 /* LaunchScreen.storyboard */,
 				AB3472C727620DFD003F8525 /* Info.plist */,
@@ -113,14 +110,14 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
-		ABA7C7D42771F3670067103A /* Services */ = {
+		ABA7C7D42771F3670067103A /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
 				ABC3F03227859EAC00E53483 /* Observer */,
 				ABA7C7D72771F8EC0067103A /* Strategy */,
 				ABA7C7D52771F37A0067103A /* Memento */,
 			);
-			path = Services;
+			path = Patterns;
 			sourceTree = "<group>";
 		};
 		ABA7C7D52771F37A0067103A /* Memento */ = {
@@ -227,7 +224,6 @@
 				AB3472BC27620DF7003F8525 /* SceneDelegate.swift in Sources */,
 				ABC3F03427859EBD00E53483 /* Observer.swift in Sources */,
 				ABA9FC3F276B63F2001F1DF4 /* GameResultsViewController.swift in Sources */,
-				AB93CEC6276C7E8B007C88C7 /* MillionaireModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

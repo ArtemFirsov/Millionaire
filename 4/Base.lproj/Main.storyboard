@@ -51,14 +51,26 @@
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7Y-7t-EXw">
+                                <rect key="frame" x="114.5" y="561" width="185" height="38"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <state key="normal" title="Добавить вопрос">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="questionAdder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J4d-Ol-QHi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="y7Y-7t-EXw" firstAttribute="top" secondItem="vNg-VP-Bdl" secondAttribute="bottom" constant="45.5" id="4rp-qW-AOk"/>
                             <constraint firstItem="4Ht-EI-RwA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="AUd-9d-2sz"/>
                             <constraint firstItem="sJo-u3-rSb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ROk-Ze-0Po"/>
                             <constraint firstItem="sJo-u3-rSb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lEZ-Id-ruL"/>
                             <constraint firstItem="4Ht-EI-RwA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="m06-Tr-A74"/>
+                            <constraint firstItem="y7Y-7t-EXw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uN2-jp-3LI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ht-EI-RwA" secondAttribute="trailing" constant="70" id="wFd-EO-g2h"/>
                         </constraints>
                     </view>

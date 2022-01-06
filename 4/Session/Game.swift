@@ -34,3 +34,9 @@ struct Games: Codable {
     var allAnswer: Int = 3
     var cash: Int = 0
 }
+
+struct Question: Codable {
+    var questionText: String
+    var answersText: [String]
+    var trueAnswer: Int
+}
