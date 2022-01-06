@@ -11,21 +11,32 @@ class Game {
     
     static let shared = Game()
     
-    private let resultsCareTaker = ResultsCaretaker()
-
+    private let careTaker = Caretaker()
+    
     weak var gameSession: GameSession?
     private(set) var games: [Games] {
         didSet {
-            resultsCareTaker.saveResults(game: self.games)
+            careTaker.saveResults(game: self.games)
         }
     }
     
     private init() {
-        self.games = resultsCareTaker.retrieveResults()
+        self.games = careTaker.retrieveResults()
+        self.questions = careTaker.retrieveQuestions()
     }
     
     func addGame(game: Games) {
         games.append(game)
+    }
+    
+    func addQustion(question: Question) {
+        questions.append(question)
+    }
+    
+    private(set) var questions: [Question] {
+        didSet {
+            careTaker.saveQuestions(question: self.questions)
+        }
     }
 }
 

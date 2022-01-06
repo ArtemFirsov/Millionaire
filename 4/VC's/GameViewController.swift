@@ -22,10 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var observerLabel: UILabel!
     
     lazy var buttons: [UIButton] = { return [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer]}()
-    var questions: [Question] = [
-        Question(questionText: "Сколько будет 2+2*2?", answersText: ["6", "12", "4", "84"], trueAnswer: 0),
-        Question(questionText: "Сколько глаз  у пчелы?", answersText: ["2", "280", "5", "84"], trueAnswer: 2),
-        Question(questionText: "Какая сейчас актуальная версия ОС Windows?", answersText: ["7", "10", "9", "11"], trueAnswer: 1)]
+    var questions = Game.shared.questions
     
     var questionIndex: [Int]!
     var currentIndex = Observable<Int>(0)
@@ -49,6 +46,7 @@ class GameViewController: UIViewController {
         currentIndex.addObserver(self, options: [.new, .initial]) { [weak self] (currentIndex, _) in
             self?.observerLabel.text = "Текущий вопрос: \(currentIndex + 1)"
         }
+        print(self.questions.count)
     }
     
     func updateTextsForQuestions(index: Int) {

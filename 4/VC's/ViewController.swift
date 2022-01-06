@@ -49,7 +49,6 @@ extension MainMenuViewController {
         controller.addTextField { (textField: UITextField) in
             textField.placeholder = ""
         }
-        
             let addButton = UIAlertAction(title: "Далее", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if let textFelds = controller.textFields {
@@ -70,11 +69,12 @@ extension MainMenuViewController {
         let cancelButton = UIAlertAction(title: "Отмена", style: .destructive) { [weak self] _ in
             guard let self = self else { return }
             self.addIteration = 0
+            self.tmpAnswers = []
+            
         }
             controller.addAction(addButton)
             controller.addAction(cancelButton)
             self.present(controller, animated: true, completion: nil)
-        
     }
     
     func okAlert(alertText: String, iteration: Int) {
@@ -90,11 +90,9 @@ extension MainMenuViewController {
             default:
                 return
             }
-            
         }
         alertController.addAction(okButton)
         present(alertController, animated: true, completion: nil)
-        
     }
     
     func nextWindow(alertText: String) {
@@ -102,7 +100,6 @@ extension MainMenuViewController {
         controller.addTextField { (textField: UITextField) in
             textField.placeholder = ""
         }
-        
             let addButton = UIAlertAction(title: "Далее", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if let textFelds = controller.textFields {
@@ -127,6 +124,7 @@ extension MainMenuViewController {
             let cancelButton = UIAlertAction(title: "Отмена", style: .destructive) { [weak self] _ in
                 guard let self = self else { return }
                 self.addIteration = 0
+                self.tmpAnswers = []
             }
             controller.addAction(addButton)
             controller.addAction(cancelButton)
@@ -138,7 +136,6 @@ extension MainMenuViewController {
         controller.addTextField { (textField: UITextField) in
             textField.placeholder = ""
         }
-        
             let addButton = UIAlertAction(title: "Далее", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if let textFelds = controller.textFields {
@@ -150,7 +147,8 @@ extension MainMenuViewController {
                         self.question.trueAnswer = int - 1
                         print(self.question)
                         self.addIteration = 0
-                        
+                        Game.shared.addQustion(question: self.question)
+                        self.tmpAnswers = []
                     } else {
                         self.okAlert(alertText: "Нужно ввести цисло от 1 до 4", iteration: self.addIteration)
                     }
@@ -159,6 +157,7 @@ extension MainMenuViewController {
             let cancelButton = UIAlertAction(title: "Отмена", style: .destructive) { [weak self] _ in
                 guard let self = self else { return }
                 self.addIteration = 0
+                self.tmpAnswers = []
             }
             controller.addAction(addButton)
             controller.addAction(cancelButton)

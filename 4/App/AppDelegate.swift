@@ -14,6 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let questionsKey = "questionKey"
+        let questions: [Question] = [
+                Question(questionText: "Сколько будет 2+2*2?", answersText: ["6", "12", "4", "84"], trueAnswer: 0),
+                Question(questionText: "Сколько глаз  у пчелы?", answersText: ["2", "280", "5", "84"], trueAnswer: 2),
+                Question(questionText: "Какая сейчас актуальная версия ОС Windows?", answersText: ["7", "10", "9", "11"], trueAnswer: 1)]
+        do {
+            let data = try? JSONEncoder().encode(questions)
+            UserDefaults.standard.setValue(data, forKey: questionsKey)
+        } catch {
+            print(error)
+        }
+       
         return true
     }
 

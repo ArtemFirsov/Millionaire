@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ResultsCaretaker {
+class Caretaker {
     
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
